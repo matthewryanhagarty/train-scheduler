@@ -21,12 +21,12 @@ var firebaseConfig = {
   $(".submit").on("click", function(event) {
     event.preventDefault();
 
-  tainName = $("#train-name-input").val().trim()
-  destination =$("#destination-input").val().trim()
-  firstTrainTime = $("#first-train-input").val().trim()
-  frequency = $("#frequency-input").value().trim()
+  trainName = $("#train-name-input").val().trim();
+  destination =$("#destination-input").val().trim();
+  firstTrainTime = $("#first-train-input").val().trim();
+  frequency = $("#frequency-input").val().trim();
 
-  database.ref().push({
+  database.ref("train-scheduler").push({
       trainName: trainName,
       destination: destination,
       firstTrainTime: firstTrainTime,
@@ -38,26 +38,21 @@ var firebaseConfig = {
 
         var trainScheduler = snapshot.val();
 
-        console.log(trainScheduler.trainName);
-
         var tableRow = $("<tr>");
+        var tableData = "<td>";
+        var tableBody =$("<tbody>");
 
-        tableRow.append($("<td>").text(trainScheduler.trainName));
-        tableRow.append($("<td>").text(trainScheduler.destination));
-        tableRow.append($("<td>").text(trainScheduler.firstTrainTime));
-        tableRow.append($("<td>").text(trainScheduler.frequency));
-
-        var tableBody = $("<tbody>");
+        tableRow.append($(tableData).text(trainScheduler.trainName));
+        tableRow.append($(tableData).text(trainScheduler.destination));
+        tableRow.append($(tableData).text(trainScheduler.firstTrainTime));
+        tableRow.append($(tableData).text(trainScheduler.frequency));
 
         tableBody.append(tableRow);
+        $("#tbody").append(tableRow);
+
+
     },
         function(errorObject) {
             console.log("Errors handled: " + errorObject.code)
         })
 
-        var tableRow = $("<tr>");
-
-        tableRow.append("<td>" + trainName + "</td>")
-        tableRow.append("<td>" + trainName + "</td>")
-        tableRow.append("<td>" + trainName + "</td>")
-        tableRow.append("<td>" + trainName + "</td>")
