@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Train Scheduler</title>
+    <title>T H E . B E E R . T R A I N</title>
 
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
@@ -40,7 +40,7 @@
     <div class="container fluid">
         <div class="row">
             <div class="col-sm-12">
-                <h5 id="title" style="text-align: center">C U R R E N T  .  T R A I N  . S C H E D U L E</h5>
+                <h5 id="title" style="text-align: center">- C U R R E N T  .  T R A I N  . S C H E D U L E -</h5>
             </div>
         </div>
     </div>
@@ -51,11 +51,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Train Name</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Frequency (min)</th>
-                            <th scope="col">Next Arrival</th>
-                            <th scope="col">Minutes Away</th>
+                            <th scope="col">Train Name:</th>
+                            <th scope="col">Destination:</th>
+                            <th scope="col">Frequency (min):</th>
+                            <th scope="col">Next Arrival:</th>
+                            <th scope="col">Minutes Away:</th>
                         </tr>
                     </thead>
                     <tbody id="tbody"></tbody>
@@ -67,7 +67,7 @@
     <div class="container fluid">
         <div class="row">
             <div class="col-sm-12">
-                <h5 id="title" style="text-align: center">A D D  .  A  .  T R A I N  . B E L O W</h5>
+                <h5 id="title" style="text-align: center">+ A D D  .  A  .  T R A I N  . B E L O W +</h5>
             </div>
         </div>
     </div>
@@ -78,32 +78,36 @@
             <form class="train-scheduler">
                 <label for="train-name">Train Name</label>
                 <br>
-                <input type="text" id="train-name-input" name="train-name-search">
+                <input class="input" type="text" id="train-name-input" name="train-name-search">
                 <br>
                 <br>
                 <label for="train-name">Destination</label>
                 <br>
-                <input type="text" id="destination-input" name="destination-search">
+                <input class="input" type="text" id="destination-input" name="destination-search">
                 <br>
                 <br>
                 <label for="train-name">First Train Time (hh:mm)</label>
                 <br>
-                <input type="text" id="first-train-input" name="first-train-search">
+                <input class="input" type="text" id="first-train-input" name="first-train-search">
                 <br>
                 <br>
                 <label for="train-name">Frequency (in Minutes)</label>
                 <br>
-                <input type="text" id="frequency-input" name="frequency-search">
+                <input class="input" type="text" id="frequency-input" name="frequency-search">
                 <br>
                 <br>
-                <button class="submit" value="submit-train">+ A D D . T R A I N +</button>
+                <button class="submit" value="submit-train">ADD + TRAIN</button>
                 <br>
             </form>
             </div>
         </div>
     </div>
     <br>
-    <br>
+    <div class="row">
+            <div class="col-sm-12">
+                    <p style="text-align: center">. T H A N K . Y O U . B E E R Y . M U C H . F O R . S T O P P I N G . B Y .</p>
+            </div>
+        </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="assets/javascript/moments.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

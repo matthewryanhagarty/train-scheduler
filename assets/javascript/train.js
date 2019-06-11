@@ -27,6 +27,11 @@ var firebaseConfig = {
   firstTrainTime = $("#first-train-input").val().trim();
   frequency = $("#frequency-input").val().trim();
 
+  if (trainName === "" || destination === "" || firstTrainTime === "" || frequency === "") {
+    alert("Please input all of the train information. Thanks!");
+    return false;
+    } else {
+
   database.ref("train-scheduler").push({
       trainName: trainName,
       destination: destination,
@@ -38,8 +43,9 @@ var firebaseConfig = {
   $("#destination-input").val("");
   $("#first-train-input").val("");
   $("#frequency-input").val("");
-
+  }
 });
+  
 
     database.ref("train-scheduler").on("child_added", function(snapshot) {
 
