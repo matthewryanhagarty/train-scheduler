@@ -20,15 +20,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <html>
 <body>
     <div class="container fluid">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12" id=jumbo-hold>
                 <div class="jumbotron jumbotron-fluid">
-                    <h1 class="display-4">The Beer Train</h1>
-                    <p class="lead">Take A Trip To Some Of California's Best Breweries</p>
+                <div class="text-hold">
+                    <h1 style=font-size:80px>T H E . B E E R . T R A I N</h1>
+                    <h3 style=font-size:40px>Take A Trip To Some Of California's Best Breweries</h3>
+                </div<>
                 </div>
             </div>
         </div>
@@ -36,10 +40,11 @@
     <div class="container fluid">
         <div class="row">
             <div class="col-sm-12">
-                <p>Current Train Schedule</p>
+                <h5>Current Train Schedule</h5>
             </div>
         </div>
     </div>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -62,10 +67,11 @@
     <div class="container fluid">
         <div class="row">
             <div class="col-sm-12">
-                <p>Add Train</p>
+                <h5>Add Train</h5>
             </div>
         </div>
     </div>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -80,12 +86,12 @@
                 <input type="text" id="destination-input" name="destination-search">
                 <br>
                 <br>
-                <label for="train-name">First Train Time (HH:mm - Military Time)</label>
+                <label for="train-name">First Train Time (hh:mm)</label>
                 <br>
                 <input type="text" id="first-train-input" name="first-train-search">
                 <br>
                 <br>
-                <label for="train-name">Frequency</label>
+                <label for="train-name">Frequency (in Minutes)</label>
                 <br>
                 <input type="text" id="frequency-input" name="frequency-search">
                 <br>

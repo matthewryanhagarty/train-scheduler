@@ -33,6 +33,12 @@ var firebaseConfig = {
       firstTrainTime: firstTrainTime,
       frequency: frequency,
   });
+
+  $("#train-name-input").val("");
+  $("#destination-input").val("");
+  $("#first-train-input").val("");
+  $("#frequency-input").val("");
+
 });
 
     database.ref("train-scheduler").on("child_added", function(snapshot) {
@@ -40,7 +46,7 @@ var firebaseConfig = {
         var trainScheduler = snapshot.val();
 
         var now = moment();
-        
+
         frequency = trainScheduler.frequency;
         firstTrainTime = trainScheduler.firstTrainTime;
 

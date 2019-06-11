@@ -1,0 +1,18 @@
+.jumbotron {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-align: vertical;
+    color:white;
+    background-image: url(../images/anchor3.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    height: 400px;
+    position: relative
+}
+
+
+.container {
+    border-width: 1px;
+    border-style: solid;
+
+}
