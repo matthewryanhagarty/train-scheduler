@@ -15,8 +15,10 @@ var firebaseConfig = {
 
   var trainName = "";
   var destination= "";
-  var firstTrainTime = "";
-  var frequency = "";
+  var firstTrainTime = "04:25";
+  var frequency = 15;
+  var now = moment();
+
 
   $(".submit").on("click", function(event) {
     event.preventDefault();
@@ -38,14 +40,21 @@ var firebaseConfig = {
 
         var trainScheduler = snapshot.val();
 
+        var firstTimeConverted = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+        var fromNow = now.diff(moment(firstTimeConverted), "minutes");
+        var timeRemaining = fromNow % frequency;
+        var minutesLeft = frequency - timeRemaining;
+        var nextTrain = now.add(minutesLeft, "minutes");
+
         var tableRow = $("<tr>");
         var tableData = "<td>";
         var tableBody =$("<tbody>");
 
         tableRow.append($(tableData).text(trainScheduler.trainName));
         tableRow.append($(tableData).text(trainScheduler.destination));
-        tableRow.append($(tableData).text(trainScheduler.firstTrainTime));
         tableRow.append($(tableData).text(trainScheduler.frequency));
+        tableRow.append($(tableData).text(nextTrain));
+        tableRow.append($(tableData).text(minutesLeft));
 
         tableBody.append(tableRow);
         $("#tbody").append(tableRow);
